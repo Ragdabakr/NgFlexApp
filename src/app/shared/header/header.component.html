@@ -1,0 +1,20 @@
+<!-- eslint-disable @angular-eslint/template/click-events-have-key-events -->
+<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
+<header>
+  <div class="logo">
+    <a href="">
+      <img src="assets/images/logo.png" alt="" />
+    </a>
+  </div>
+  <div class="navigation">
+    <ul>
+      <li><a routerLink="home">Home</a></li>
+      <li><a routerLink="/shows/list/movie">Movies && Tv Shows</a></li>
+      <!-- <li><a routerLink="shows/list/tv">TV Shows</a></li> -->
+      <li><a routerLink="genres">Genres</a></li>
+      <li> <button (click)="logout()">Logout</button></li>
+    </ul>
+   
+  </div>
+
+</header>

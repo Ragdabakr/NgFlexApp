@@ -1,0 +1,35 @@
+<div class="d-flex align-items-center justify-content-center" style="height: 100vh;">
+<p-card  [style]="{ width: '500px' }">
+    <ng-template pTemplate="header">
+        <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
+        <div [style]="{ marginTop: '50px' }">
+           <h2 class="text-center">Welcome back</h2>
+           <p class="text-center">It's nice to see you again</p>
+        </div>
+    </ng-template>
+    <div class="form-container sign-in-container">
+        <form (ngSubmit)="onSubmit()" [formGroup]="authForm">
+            <app-input inputType="text"
+            label= "username" placeholder="username"
+            [control]="authForm.get('username')"></app-input>
+        
+            <app-input inputType="password"
+            label="password" placeholder="password"
+            [control]="authForm.get('password')"></app-input>
+            <div>
+                <button  icon="pi pi-check" class="btn btn-primary">
+                    <a class="text-decoration-none text-white">
+                        Save
+                    </a>
+                </button>
+            </div>
+            <div class="d-flex">
+            <a routerLink="/">
+                <i class="bi bi-arrow-return-right"></i>
+            </a>
+            </div>
+        </form>
+    </div>
+</p-card>
+</div>
+

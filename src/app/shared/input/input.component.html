@@ -1,0 +1,33 @@
+
+<div class="field">
+    <!-- <label>{{ label }}</label>  <span class="red">*</span> -->
+    <input [type]="inputType" [placeholder]="placeholder" [formControl]="control" class="form-control" />
+    <div *ngIf="showErrors()" class="ui pointing red basic label">
+        <p *ngIf="control.errors.required">
+            Required
+        </p>
+        <p *ngIf="control.errors.minlength">
+          Value
+            {{ control.errors.minlength.actualLength }}
+            must be at least
+            {{ control.errors.minlength.requiredLength }}
+            characters
+        </p>
+        <p *ngIf="control.errors.maxlength">
+         Value
+            {{ control.errors.maxlength.actualLength }}
+            must not be longer than
+            {{ control.errors.maxlength.requiredLength }}
+            characters
+        </p>
+        <p *ngIf="control.errors.pattern">
+           Value not correct
+        </p>
+        <p *ngIf="control.errors.nonUniqueUsername">
+          
+        </p>
+        <p *ngIf="control.errors.noConnection">
+           No connection
+        </p>
+    </div>
+</div>

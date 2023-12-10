@@ -1,0 +1,18 @@
+
+<div class="d-flex align-items-center justify-content-center" style="height: 100vh;">
+    <div>
+        <p-card [style]="{ width: '500px' }">
+            <ng-template pTemplate="header">
+                <img src="assets/images/logo.png" alt="logo" [style]="{ marginTop: '50px' }"/>
+             <p></p>
+            </ng-template>
+            <ng-container >
+                <div class="container">
+                    <p class="text-center">Who's watching now?</p>
+                    <p-button label="Ragda" [loading]="loading" (onClick)="register()"loadingIcon="pi pi-bell"  icon="pi pi-user-plus"   styleClass="p-button-secondary full-width-button" [style]="{ 'margin-left': '.5em' }"></p-button>
+                     <p-button class="full-width-button" label="Guest" (onClick)="guest()" [loading]="loading" loadingIcon="pi pi-bell"   [style]="{ 'margin-left': '.5em' }" icon="pi pi-user"></p-button> 
+                </div>
+            </ng-container>
+        </p-card>
+    </div>
+ </div>
