@@ -1,5 +1,6 @@
 import { Component } from '@angular/core'
 import { Router } from '@angular/router'
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +8,7 @@ import { Router } from '@angular/router'
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'ngFlix'
-  constructor(public router: Router){}
+  constructor(public router: Router ,public AuthService:AuthService){}
 
 
 }

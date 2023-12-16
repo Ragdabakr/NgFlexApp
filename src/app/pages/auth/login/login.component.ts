@@ -9,11 +9,11 @@ import { TokenDto, UserSession } from 'src/app/types/token';
 
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss'],
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss'],
 })
-export class RegisterComponent implements OnInit {
+export class LoginComponent implements OnInit {
   showRequestedToken:any;
   userToken$: Observable<Register>| null = null;
   token$: Observable<TokenDto>| null = null;
@@ -40,7 +40,6 @@ export class RegisterComponent implements OnInit {
   constructor(private authService: AuthService ,  private _router: Router , private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-
    this.showRequestedToken = localStorage.getItem('requestToken') || '';
   }
 
@@ -53,11 +52,12 @@ export class RegisterComponent implements OnInit {
     password : this.authForm.value.password || '',
     request_token: this.showRequestedToken.replace(/^"|"$/g, ''),
   }
-  this.authService.ValidateWithLogin(registerData).subscribe({
+
+    this.authService.ValidateWithLogin(registerData).subscribe({
     next: response => {
       if (response === null){return}
-      const token$ = response.request_token;
-      localStorage.setItem('token',token$);
+      // const token$ = response.request_token;
+      // localStorage.setItem('token',token$);
       this._router.navigate(['home'])
         }
      })   

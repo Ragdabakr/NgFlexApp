@@ -12,7 +12,7 @@ import { ImagesDto } from '../types/image';
 })
 export class TvshowsService {
   private apiUrl = 'https://api.themoviedb.org/3';
-  private apiKey = '8c247ea0b4b56ed2ff7d41c9a833aa77';
+  private apiKey = 'a422ec0067dcc363352c74c54131c25b';
 
   constructor(private http: HttpClient) {}
 

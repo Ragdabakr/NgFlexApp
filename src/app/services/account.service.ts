@@ -12,8 +12,8 @@ export class AccountService {
   constructor(private http: HttpClient) { }
 
   private apiUrl = 'https://api.themoviedb.org/3';
-  private apiKey = '56793b7cb2cd7c404ad6a593cb351c17';
-  private accountId = '20675797';
+  private apiKey = 'a422ec0067dcc363352c74c54131c25b';
+  private accountId = '20836988';
 
   getAccountDetails() {
     return this.http

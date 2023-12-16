@@ -17,7 +17,7 @@ export class AuthHomeComponent{
 
  constructor(private authService: AuthService , private _router: Router) {}
 
-register(){
+login(){
   this.token$ =this.authService.getRequestToken();
   this.token$.subscribe(data => {
     localStorage.setItem('requestToken', JSON.stringify(data.request_token));

@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
+import { HomeComponent } from './pages/home/home.component';
+import { IsAuthenticatedGuard } from './shared/is-authenticated.guard';
 
 const routes: Routes = [
-
   {
-    path: 'home',
-    data: { pageTitle: 'Home Page' },
-    loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
+    path:'home',
+    canActivate:[IsAuthenticatedGuard],
+    component:HomeComponent
   },
   {
     path: 'shows',

@@ -22,7 +22,7 @@ import { RouterModule } from '@angular/router';
     ButtonModule,
     InputTextModule, 
     ServicesModule,
-    RouterModule
+    RouterModule,
 
   ],exports:[
     FormsModule,

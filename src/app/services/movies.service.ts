@@ -11,7 +11,7 @@ import { CreditsDto } from '../types/credits';
 })
 export class MoviesService {
   private apiUrl = 'https://api.themoviedb.org/3';
-  private apiKey = '56793b7cb2cd7c404ad6a593cb351c17';
+  private apiKey = 'a422ec0067dcc363352c74c54131c25b';
 
   constructor(private http: HttpClient) {}
 

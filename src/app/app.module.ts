@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import {  HttpClientModule } from '@angular/common/http';
 import { ImageModule } from 'primeng/image';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
@@ -12,12 +12,12 @@ import { GenresComponent } from './pages/genres/genres.component';
 import { AuthModule } from './pages/auth/auth.module';
 import { SharedModule } from './shared/shared.module';
 import { ComponentsModule } from './components/components.module';
-import { HomeModule } from './pages/home/home.module';
 import { ShowsModule } from './pages/shows/shows.module';
 import { ServicesModule } from './services/services.module';
 import { UserModule } from './pages/user/user.module';
-import { TokenInterceptor } from './shared/token.interceptor';
 import { GenresModule } from './pages/genres/genres.module';
+import { AuthInterceptorProvider } from './shared/auth.interceptor';
+import { HomeComponent } from './pages/home/home.component';
 
 
 
@@ -25,6 +25,7 @@ import { GenresModule } from './pages/genres/genres.module';
   declarations: [
     AppComponent,
     GenresComponent,
+    HomeComponent
 
   ],
   imports: [
@@ -41,14 +42,14 @@ import { GenresModule } from './pages/genres/genres.module';
     SharedModule,
     AuthModule,
     UserModule,
-    HomeModule,
     ShowsModule,
-    GenresModule
-     ],
+    GenresModule,
+    ComponentsModule,
+    ServicesModule,
+    
+  ],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true
-    }, //send token to header
+   AuthInterceptorProvider //send token to header
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
