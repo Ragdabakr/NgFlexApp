@@ -17,7 +17,7 @@
             label="password" placeholder="password"
             [control]="authForm.get('password')"></app-input>
             <div>
-                <button  icon="pi pi-check" class="btn btn-primary">
+                <button [disabled]="!authForm.valid" icon="pi pi-check" class="btn btn-primary">
                     <a class="text-decoration-none text-white">
                         Save
                     </a>
