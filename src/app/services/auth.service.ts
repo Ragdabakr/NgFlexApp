@@ -54,6 +54,7 @@ export class AuthService {
   getGestSession() {
     return this.http
       .get<GuestSession>(`${this.apiUrl}/authentication/guest_session/new?api_key=${this.apiKey}`);
+       this._isLoggedIn$.next(true);
      
   }
   logout(): void {
